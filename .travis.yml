@@ -3,21 +3,21 @@ before_install:
   - "docker build -t shrini2018/docker-react -f Dockerfile.dev ."
 deploy: 
   - 
-    provider: elasticbeanstalk
+    provider: "elasticbeanstalk"
   - 
-    region: ap-south-1
+    region: "ap-south-1"
   - 
-    app: Docker-react
+    app: "Docker-react"
   - 
-    env: DockerReact-env
+    env: "DockerReact-env"
   - 
-    bucket_name: elasticbeanstalk-ap-south-1-934757415082
+    bucket_name: "elasticbeanstalk-ap-south-1-934757415082"
   - 
     access_key_id: 
-      secure: $Access
-    bucket_path: Docker-react
+      secure: "$Access"
+    bucket_path: "Docker-react"
     secret_access_key: 
-      secure: $Secret
+      secure: "$Secret"
     on: 
       branch: master
 language: generic
