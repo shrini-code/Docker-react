@@ -1,4 +1,6 @@
---- 
+---
+language: generic
+
 before_install: 
   - "docker build -t shrini2018/docker-react -f Dockerfile.dev ."
 deploy: 

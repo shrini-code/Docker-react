@@ -4,11 +4,11 @@ WORKDIR '/app'
 
 COPY package.json .
 
-RUN npm install
-
 RUN npm install -g increase-memory-limit
 
 RUN increase-memory-limit
+
+RUN npm install
 
 COPY . .
 
