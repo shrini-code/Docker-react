@@ -14,11 +14,11 @@ deploy:
     bucket_name: elasticbeanstalk-ap-south-1-934757415082
   - 
     access_key_id: 
-      secure: $AWS_ACCESS_KEY
+      secure: $Access
     bucket_path: Docker-react
     secret_access_key: 
-      secure: $AWS_SECREAT_KEY
-    true: 
+      secure: $Secret
+    on: 
       branch: master
 language: generic
 script: 
