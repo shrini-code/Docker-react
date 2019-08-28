@@ -1,20 +1,26 @@
 --- 
 before_install: 
-  - docker build -t shrini2018/docker-react -f Dockerfile.dev .
+  - "docker build -t shrini2018/docker-react -f Dockerfile.dev ."
+deploy: 
+  - 
+    provider: elasticbeanstalk
+  - 
+    region: ap-south-1
+  - 
+    app: Docker-react
+  - 
+    env: DockerReact-env
+  - 
+    bucket_name: elasticbeanstalk-ap-south-1-934757415082
+  - 
+    access_key_id: $AWS_ACCESS_KEY
+    bucket_path: Docker-react
+    secret_access_key: 
+      secure: $AWS_SECREAT_KEY
+    true: 
+      branch: master
 script: 
-  - docker run -e CI=true shrini2018/docker-react npm run test
-deploy:
-  - provider: elasticbeanstalk
-  - region: "ap-south-1"
-  - app: "Docker-react"
-  - env: "DockerReact-env"
-  - bucket_name: "elasticbeanstalk-ap-south-1-934757415082"
-  - bucket_path: "Docker-react"
-    on:
-            branch: master
-    access_key_id: "$AWS_ACCESS_KEY"
-    secret_access_key:
-            secure: "$AWS_SECREAT_KEY"    
+  - "docker run -e CI=true shrini2018/docker-react npm run test"
 services: 
   - docker
 sudo: required
