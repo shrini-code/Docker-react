@@ -16,8 +16,8 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY
     bucket_path: Docker-react
     secret_access_key: 
-      secure: $AWS_SECREAT_KEY
-    true: 
+      secure: "$AWS_SECREAT_KEY"
+    on: 
       branch: master
 script: 
   - "docker run -e CI=true shrini2018/docker-react npm run test"
